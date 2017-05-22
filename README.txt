@@ -67,6 +67,11 @@ $ python manage.py migrate
 # Playing with the API
 $ python manage.py shell
 
+# Install Bootstrap:
+$ sudo -E pip install django-bootstrap3
+# Install JQuery
+$ sudo -E pip install django-jquery
+
 # Creating an admin user:
 $ python manage.py createsuperuser
 

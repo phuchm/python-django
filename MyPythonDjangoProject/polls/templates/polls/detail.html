@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Detail</title>
 </head>
 <body>
+{% load static %}
+<script src="{% static "js/jquery.js" %}"></script>
+
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
 <!-- {{ question }} -->
 <!--
 <h1>{{ question.question_text }}</h1>
