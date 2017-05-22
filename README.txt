@@ -71,6 +71,8 @@ $ python manage.py shell
 $ sudo -E pip install django-bootstrap3
 # Install JQuery
 $ sudo -E pip install django-jquery
+# Install AngularJS
+$ sudo -E pip install django-angular
 
 # Creating an admin user:
 $ python manage.py createsuperuser
