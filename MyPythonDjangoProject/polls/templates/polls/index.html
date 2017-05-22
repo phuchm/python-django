@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% load static %}
+    <script src="{% static "js/jquery.js" %}"></script>
+    {# Load the tag library #}
+    {% load bootstrap3 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <script src="{% static "js/main.js" %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Index</title>
 </head>
 <body>
-{% load static %}
-<script src="{% static "js/jquery.js" %}"></script>
-
-{# Load the tag library #}
-{% load bootstrap3 %}
-
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
 
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
