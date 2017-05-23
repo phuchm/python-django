@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Detail</title>
-</head>
-<body>
-{% load static %}
-<script src="{% static "js/jquery.js" %}"></script>
+{% extends "polls/base.html" %}
 
-{# Load the tag library #}
-{% load bootstrap3 %}
-
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-{# Display django.contrib.messages as Bootstrap alerts #}
-{% bootstrap_messages %}
+{% block content %}
 
 <!-- {{ question }} -->
 <!--
@@ -39,5 +23,5 @@
 {% endfor %}
 <input type="submit" value="Vote" />
 </form>
-</body>
-</html>
+
+{% endblock %}

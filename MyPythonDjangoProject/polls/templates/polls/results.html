@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Results</title>
-</head>
-<body>
-{% load static %}
-<script src="{% static "js/jquery.js" %}"></script>
+{% extends "polls/base.html" %}
 
-{# Load the tag library #}
-{% load bootstrap3 %}
-
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-{# Display django.contrib.messages as Bootstrap alerts #}
-{% bootstrap_messages %}
+{% block content %}
 
 <h1>{{ question.question_text }}</h1>
 
@@ -27,5 +11,5 @@
 </ul>
 
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
-</body>
-</html>
+
+{% endblock %}
