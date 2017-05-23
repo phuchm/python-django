@@ -13,13 +13,7 @@ from .models import Question
 
 # Create your views here.
 def index(request):
-    # return HttpResponse("Hello, world. You're at the polls index.")
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    """
-    # Hardcode
-    # output = ', '.join([q.question_text for q in latest_question_list])
-    # return HttpResponse(output)
-    """
     """
     # Template code
     template = loader.get_template('polls/index.html')
@@ -29,11 +23,10 @@ def index(request):
     return HttpResponse(template.render(context, request))
     """
     # Shortcut code
-    context = {'latest_question_list': latest_question_list}
+    context = {'link': 'polls', 'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context)
 
 def detail(request, question_id):
-    # return HttpResponse("You're looking at question %s." % question_id)
     """
     # Approach 1:
     try:
@@ -43,14 +36,12 @@ def detail(request, question_id):
     """
     # Approach 2:
     question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/detail.html', {'question': question})
-    return render(request, 'polls/detail.html', {'question': question})
+    return render(request, 'polls/detail.html', {'link': 'polls/' + str(question_id), 'question': question})
 
 def results(request, question_id):
-    # response = "You're looking at the results of question %s."
     # return HttpResponse(response % question_id)
     question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/results.html', {'question': question})
+    return render(request, 'polls/results.html', {'link': 'polls/' + str(question_id) + '/results', 'question': question})
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -70,13 +61,13 @@ class ResultsView(generic.DetailView):
     template_name = 'polls/results.html'
 
 def vote(request, question_id):
-    # return HttpResponse("You're voting on question %s." % question_id)
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form.
         return render(request, 'polls/detail.html', {
+            'link': 'polls/' + str(question_id) + '/vote',
             'question': question,
             'error_message': "You didn't select a choice.",
         })
@@ -89,4 +80,4 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 def about(request):
-    return render(request, 'polls/about.html')
+    return render(request, 'polls/about.html', {'link': 'polls/about'})

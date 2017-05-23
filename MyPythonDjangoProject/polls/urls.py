@@ -4,7 +4,7 @@ from . import views
 
 # Namespacing URL names
 app_name = 'polls'
-"""
+
 urlpatterns = [
     # ex: /polls/
     url(r'^$', views.index, name='index'),
@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^(?P<question_id>[0-9]+)/results/$', views.results, name='results'),
     # ex: /polls/5/vote/
     url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
+    url(r'about/$', views.about, name='about'),
 ]
 """
 urlpatterns = [
@@ -23,3 +24,4 @@ urlpatterns = [
     url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
     url(r'about/$', views.about, name='about'),
 ]
+"""
