@@ -83,6 +83,15 @@ $ python manage.py createsuperuser
 # The problem with this hardcoded, tightly-coupled approach is that it becomes challenging to change URLs on projects with a lot of templates. However, since you defined the name argument in the url() functions in the polls.urls module, you can remove a reliance on specific URL paths defined in your url configurations by using the {% url %} template tag:
 <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
 
+# Setup i18n
+# Define languages you want to support in LANGUAGES of settings.py
+# Modify GUI in .html file with {% trans "your sentence" %}
+# Then, create message corresponding to languages, for ex:
+$ python manage.py makemessages -l 'vi'
+$ python manage.py makemessages -l 'en'
+# Compile before running server
+$ python manage.py compilemessages
+
 # Running tests
 # In the terminal, we can run our test:
 $ python manage.py test polls
