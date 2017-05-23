@@ -16,7 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-urlpatterns = [
+from django.conf.urls.i18n import i18n_patterns
+
+urlpatterns = i18n_patterns(
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
-]
+)
