@@ -484,3 +484,28 @@ h1.page-header {
 .forgot-password:focus{
     color: #0bf;
 }
+
+.highlight {
+    font-size: 14px;
+    font-size: 1.4rem;
+    border: 1px solid #EAEAEA;
+    background: #F4F4F4;
+    background: #f8f8f8;
+    overflow: auto;
+    border-radius: 4px;
+    margin: 25px 0;
+}
+
+.highlight .gp {
+    color: #000080;
+    font-weight: bold;
+}
+
+pre {
+    border: 0;
+    margin: 15px 20px;
+    padding: 0;
+}
+a {
+    cursor: pointer;
+}

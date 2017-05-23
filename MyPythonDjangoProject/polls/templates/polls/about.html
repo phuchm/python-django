@@ -1,0 +1,51 @@
+{% extends "polls/base.html" %}
+
+{% block content %}
+
+<h3>Install pip:</h3>
+<p>Get file <b>get-pip.py</b> from <a href="https://bootstrap.pypa.io/get-pip.py"><u>https://bootstrap.pypa.io/get-pip.py</u></a> and then run command line: </p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo -E python get-pip.py
+</pre></div>
+</div>
+
+<h3>Install Django:</h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo -E pip install django
+</pre></div>
+</div>
+
+<h3>Install JQuery:</h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo -E pip install django-jquery
+</pre></div>
+</div>
+
+<h3>Install Bootstrap:</h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo -E pip install django-bootstrap3
+</pre></div>
+</div>
+
+<h3>Install AngularJS:</h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo -E pip install django-angular
+</pre></div>
+</div>
+
+<h3>Create a project:</h3>
+<p>From the command line, cd into a directory where you’d like to store your code, then run the following command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> django-admin startproject mysite
+</pre></div>
+</div>
+
+<h3>The development server:</h3>
+<p>Let’s verify your Django project works. Change into the outer <b>mysite</b> directory, if you haven’t already, and run the following commands:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> python manage.py runserver
+</pre></div>
+</div>
+
+<h3>Changing the port:</h3>
+<p>By default, the runserver command starts the development server on the internal IP at port 8000.<br />
+If you want to change the server’s port, pass it as a command-line argument. For instance, this command starts the server on port 8080:
+</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> python manage.py runserver 8080
+</pre></div>
+</div>
+
+{% endblock %}

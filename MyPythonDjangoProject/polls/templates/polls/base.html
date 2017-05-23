@@ -16,6 +16,7 @@
 
     <script src="{% static "js/style.js" %}"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>PHOcr</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -36,7 +37,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    Administrator
+                    PHOcr
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,7 +85,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Link</a></li>
+                                <li><a href="{% url 'polls:about'%}"><span class="glyphicon glyphicon-cog"></span> About</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </nav>
@@ -97,8 +98,6 @@
                     Dashboard
                 </div>
                 <div class="panel-body">
-                    <h1>Hello Welcome..!</h1>
-                    <br>
                     {% block content %}
                     {% endblock %}
                 </div>
@@ -128,8 +127,7 @@
             <div class="modal-body" >
                  <div class="card card-container">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -40px; margin-right: -35px;"><font color="red" size="6"><span aria-hidden="true">×</span></font></button>
-                    <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-                    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                    <img id="profile-img" class="profile-img-card" src="{% static "img/avatar_2x.png" %}" />
                     <p id="profile-name" class="profile-name-card"></p>
                     <form class="form-signin">
                         <span id="reauth-email" class="reauth-email"></span>
@@ -137,7 +135,7 @@
                         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                         <div id="remember" class="checkbox">
                             <label>
-                                <input type="checkbox" value="remember-me"> Remember me
+                                <input type="checkbox" value="remember-me" style="float: left;"> <p style="float: right; padding-top: 3px">Remember me</p>
                             </label>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
@@ -158,8 +156,7 @@
             <div class="modal-body" >
                  <div class="card card-container">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -40px; margin-right: -35px;"><font color="red" size="6"><span aria-hidden="true">×</span></font></button>
-                    <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-                    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                    <img id="profile-img" class="profile-img-card" src="{% static "img/avatar_2x.png" %}" />
                     <p id="profile-name" class="profile-name-card"></p>
                     <form class="form-signin">
                         <span id="reauth-email" class="reauth-email"></span>
